@@ -1,0 +1,105 @@
+@import "src/styles/variables.scss";
+
+.header {
+  background-color: $color-black;
+  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+  min-height: 40px;
+  z-index: 101;
+
+  @media #{$viewport-medium} {
+    padding: 20px;
+  }
+
+  &.light {
+    background-color: $color-white;
+    color: $color-black;
+
+    span {
+      color: $color-black;
+
+      .close,
+      .hamburger {
+        fill: $color-black;
+        stroke: $color-black;
+      }
+    }
+  }
+
+  &.dark {
+    background-color: $color-black;
+    color: $color-white;
+
+    span {
+      color: $color-white;
+
+      .close,
+      .hamburger {
+        fill: $color-white;
+        stroke: $color-white;
+      }
+    }
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 40px;
+  }
+
+  button {
+    margin: auto;
+    margin-right: 0;
+    padding: 0;
+    width: 25px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+
+    @media #{$viewport-medium} {
+      margin-left: 0;
+      width: auto;
+      height: auto;
+    }
+
+    span {
+      @media #{$viewport-medium} {
+        display: flex;
+        flex-flow: row nowrap;
+        align-content: center;
+      }
+
+      .hamburger {
+        width: 25px;
+        height: 20px;
+        // fill: $color-black;
+      }
+
+      .close {
+        width: 31px;
+        height: 31px;
+        // fill: $color-black;
+      }
+
+      .title {
+        display: none;
+
+        @media #{$viewport-medium} {
+          font-family: $font-sans-serif;
+          font-weight: $sans-serif-regular;
+          display: inline-block;
+          margin: 0;
+          margin-left: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
